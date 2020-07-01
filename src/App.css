@@ -1,3 +1,5 @@
+/* big navbar */
+
 .navbar{
   width: 100%;
   display: flex;
@@ -20,3 +22,20 @@
   color: aliceblue;
 }
 
+
+/* small nav */
+
+.small-nav{
+  width: 100%;
+}
+
+.small-nav-option{
+  width: 100%;
+  background-color: aliceblue;
+  color: blue;
+  cursor: pointer;
+}
+
+.small-nav-option:hover{
+  background-color: blue;
+  color: aliceblue;}
