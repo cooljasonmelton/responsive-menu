@@ -13,6 +13,12 @@ class NavOptions extends React.Component {
     }
 
     handleClick = e => {
+        // close menu drop down
+        if (this.props.handleToggle){
+            this.props.handleToggle()
+        }
+
+        // push to route
         let clickedNav = e.target.getAttribute("nav")
         this.setState({activeItem: clickedNav })
         if (clickedNav === 'home') {
@@ -22,6 +28,7 @@ class NavOptions extends React.Component {
             this.props.history.push(`${clickedNav}`)
         }
     }
+
     renderNavOptions = ()=> {      
         const navOptions = ["home", "t-rex", "stegasaurus", "triceratops"]
         const { activeItem } = this.state
@@ -39,8 +46,8 @@ class NavOptions extends React.Component {
         })
     }
 
-
     render(){
+        console.log(this.props)
         return (
             <>
             {this.renderNavOptions()}
@@ -56,34 +63,3 @@ export default withRouter(NavOptions);
 
 
 
-
-
-
-// <div 
-// className={"nav-item" + (activeItem === "home" ? " clicked" : "")} 
-// onClick={this.handleClick} 
-// nav="home"
-// >
-// home
-// </div>
-// <div 
-// className={"nav-item" + (activeItem === "rex" ? " clicked" : "")} 
-// onClick={this.handleClick} 
-// nav="rex"
-// >
-// t-rex
-// </div>
-// <div 
-// className={"nav-item" + (activeItem === "steg" ? " clicked" : "")} 
-// onClick={this.handleClick} 
-// nav="steg"
-// >
-// stegasaurus
-// </div>
-// <div 
-// className={"nav-item" + (activeItem === "fly" ? " clicked" : "")} 
-// onClick={this.handleClick} 
-// nav="fly"
-// >
-// flying one
-// </div>

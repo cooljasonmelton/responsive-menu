@@ -22,7 +22,7 @@ class NavSmall extends React.Component {
             <nav className="nav-small">
                 <button className="nav-small-button" onClick={this.handleToggle}>Menu</button>
                 {toggleMenu ?
-                <NavOptions/>
+                <NavOptions handleToggle={this.handleToggle}/>
                 :
                 ""
                 }

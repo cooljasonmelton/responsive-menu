@@ -1,5 +1,4 @@
 /* big navbar */
-
 .navbar{
   width: 100%;
   display: flex;
@@ -7,6 +6,8 @@
   justify-content: space-around;
   background-color: aliceblue;
 }
+
+
 .navbar > .nav-option{
   text-decoration: none;
   cursor: pointer;
