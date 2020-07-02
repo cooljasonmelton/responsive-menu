@@ -7,7 +7,7 @@
   justify-content: space-around;
   background-color: aliceblue;
 }
-.nav-item{
+.navbar > .nav-option{
   text-decoration: none;
   cursor: pointer;
   background-color: aliceblue;
@@ -16,7 +16,7 @@
   border-radius: 1em;
 }
 
-.nav-item.clicked{
+.navbar > .nav-option.clicked{
   font-weight: bold;
   background-color: blue;
   color: aliceblue;
@@ -24,18 +24,37 @@
 
 
 /* small nav */
-
-.small-nav{
+.nav-small-button{
+  padding: 10px;
+  margin: 0;
+  float: right;
+}
+.nav-small{
   width: 100%;
+  display: none;
+  float: right;
 }
 
-.small-nav-option{
+.nav-small > .nav-option{
   width: 100%;
   background-color: aliceblue;
   color: blue;
+  font-weight: bold;
   cursor: pointer;
+  padding: 5px;
 }
 
-.small-nav-option:hover{
+.nav-small > .nav-option:hover{
   background-color: blue;
-  color: aliceblue;}
+  color: aliceblue;
+}
+
+/* make it responsive! */
+@media screen and (max-width: 44em) {
+  .nav-small{
+    display: block
+  }
+  .navbar{
+    display: none
+  }
+}
