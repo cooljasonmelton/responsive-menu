@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
+
+//styling
 import './App.css';
+
+//components
 import NavOptions from './NavOptions';
 
 const NavSmall = () => {
@@ -8,13 +12,17 @@ const NavSmall = () => {
     const handleToggle = () => {
         setToggleMenu(!toggleMenu)
     }
+
     return (
         <nav className="nav-small">
-            <button className="nav-small-button" onClick={handleToggle}>
+            <button 
+                className="nav-small-button" 
+                onClick={handleToggle}
+            >
                 Menu
             </button>
             {toggleMenu 
-                ? <NavOptions handleToggle={this.handleToggle}/>
+                ? <NavOptions handleToggle={handleToggle}/>
                     : ""}
         </nav>
     )

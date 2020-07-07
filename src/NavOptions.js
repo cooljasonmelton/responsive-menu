@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import './App.css';
 import { withRouter } from 'react-router-dom';
+
+//styling
+import './App.css';
 
 const NavOptions = (props) => {
     const {handleToggle, history} = props

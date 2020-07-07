@@ -1,10 +1,14 @@
 import React from 'react';
+
+//styling
 import './App.css';
+
+//components
 import Navbar from './Navbar';
 import NavSmall from './NavSmall';
 
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Navbar/>
