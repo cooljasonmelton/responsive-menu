@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 //styling
-import './App.css';
+import '../App.css';
 
 //components
 import NavOptions from './NavOptions';

@@ -4,8 +4,8 @@ import React from 'react';
 import './App.css';
 
 //components
-import Navbar from './Navbar';
-import NavSmall from './NavSmall';
+import Navbar from './Navbar/Navbar';
+import NavSmall from './Navbar/NavSmall';
 
 
 const App = () => {
