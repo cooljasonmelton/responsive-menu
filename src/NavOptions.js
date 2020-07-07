@@ -1,58 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import { withRouter } from 'react-router-dom';
 
+const NavOptions = (props) => {
+    const {handleToggle, history} = props
+    const [activeItem, setActiveItem] = useState('home')
 
+    //navigation menu options
+    const navOptions = [
+        "home", 
+        "t-rex", 
+        "stegasaurus", 
+        "triceratops"
+    ]
 
-class NavOptions extends React.Component {
-    constructor(){
-        super()
-        this.state = {
-            activeItem: "home"
-        }
-    }
+    const handleClick = (e) => {
+        //close menu drop down
+        handleToggle && handleToggle()
 
-    handleClick = e => {
-        // close menu drop down
-        if (this.props.handleToggle){
-            this.props.handleToggle()
-        }
-
-        // push to route
+        //push to route
         let clickedNav = e.target.getAttribute("nav")
-        this.setState({activeItem: clickedNav })
-        if (clickedNav === 'home') {
-            this.props.history.push('/')
-            window.location.reload()
-         } else {
-            this.props.history.push(`${clickedNav}`)
-        }
+        setActiveItem(clickedNav)
+        clickedNav === 'home'
+            ? history.push('/')
+                : history.push(`${clickedNav}`)
     }
 
-    renderNavOptions = ()=> {      
-        const navOptions = ["home", "t-rex", "stegasaurus", "triceratops"]
-        const { activeItem } = this.state
-        return navOptions.map(option => {
-            return (
-                <div 
-                className={"nav-option" + (activeItem === option ? " clicked" : "")} 
-                onClick={this.handleClick} 
+    return (
+        navOptions.map(option => <div 
+                className={"nav-option" + (activeItem === option ? " clicked" : '')}
+                onClick={handleClick} 
                 nav={option}
-                key={option}
-                >
-                    {option}
-                </div>
-            )
-        })
-    }
-
-    render(){
-        return (
-            <>
-            {this.renderNavOptions()}
-            </>
-        );
-    }
+                key={option} 
+            >
+                {option}
+            </div>
+        )
+    )
 }
 
 export default withRouter(NavOptions);

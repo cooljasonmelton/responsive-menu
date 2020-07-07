@@ -1,31 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import NavOptions from './NavOptions';
 
-class NavSmall extends React.Component {
-    constructor(){
-        super()
-        this.state = { toggleMenu: false }
-    }
+const NavSmall = () => {
+    const [toggleMenu, setToggleMenu] = useState(false)
 
-    handleToggle = () => {
-        this.setState(prevState => ({ 
-            toggleMenu: !prevState.toggleMenu 
-        }))
+    const handleToggle = () => {
+        setToggleMenu(!toggleMenu)
     }
-
-    render(){
-        const { toggleMenu } = this.state
-        return (
-            <nav className="nav-small">
-                <button className="nav-small-button" onClick={this.handleToggle}>Menu</button>
-                {toggleMenu ?
-                <NavOptions handleToggle={this.handleToggle}/>
-                :
-                ""
-                }
-            </nav>
-        );
-    }
+    return (
+        <nav className="nav-small">
+            <button className="nav-small-button" onClick={handleToggle}>
+                Menu
+            </button>
+            {toggleMenu 
+                ? <NavOptions handleToggle={this.handleToggle}/>
+                    : ""}
+        </nav>
+    )
 }
+
 export default NavSmall;
