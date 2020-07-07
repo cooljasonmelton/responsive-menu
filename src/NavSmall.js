@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { withRouter } from 'react-router-dom';
 import NavOptions from './NavOptions';
 
 class NavSmall extends React.Component {
@@ -8,7 +7,6 @@ class NavSmall extends React.Component {
         super()
         this.state = { toggleMenu: false }
     }
-
 
     handleToggle = () => {
         this.setState(prevState => ({ 
@@ -30,5 +28,4 @@ class NavSmall extends React.Component {
         );
     }
 }
-
-export default withRouter(NavSmall);
+export default NavSmall;

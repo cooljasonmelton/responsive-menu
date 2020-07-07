@@ -47,7 +47,6 @@ class NavOptions extends React.Component {
     }
 
     render(){
-        console.log(this.props)
         return (
             <>
             {this.renderNavOptions()}
