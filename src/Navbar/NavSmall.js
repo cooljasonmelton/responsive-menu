@@ -27,5 +27,4 @@ const NavSmall = () => {
         </nav>
     )
 }
-
 export default NavSmall;
